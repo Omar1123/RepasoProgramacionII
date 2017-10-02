@@ -69,7 +69,7 @@ public class ManejadorEstudiante {
         promedio = 0;
         
         for(Estudiante estudiante: listaEstudiantes) {
-            promedio += estudiante.getNota();
+            promedio = promedio + estudiante.getNota();
         }
         
         promedio = promedio / listaEstudiantes.size();

@@ -52,11 +52,8 @@ public class ManejadorProduccion {
     
     public void listaProductos() {
                 
-        for(Produccion produccion: listaProduccion) {
-            System.out.println(produccion.getNombre());
-            System.out.println(produccion.getCostoUnitario());
-            System.out.println(produccion.getUnidadesProducidas());
-            System.out.println(produccion.costosProduccion());
+        for(Produccion produccion: listaProduccion) {            
+            System.out.println("El costo de produccion es: " + produccion.costosProduccion());
         }               
     }
 }

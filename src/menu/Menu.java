@@ -6,6 +6,7 @@
 package menu;
 
 import java.util.Scanner;
+import modelo.Estudiante;
 import modelo.Trabajador;
 
 /**
@@ -13,29 +14,23 @@ import modelo.Trabajador;
  * @author jake
  */
 public class Menu {
+        
+    private int decision;
     
-    private Trabajador trabajador;
+    public Menu() {        
     
-    public Menu() {
-        trabajador = new Trabajador();
     }
-    
-    public void recibirDatos() {
+        
+    public void mostrarInformacion() {
         
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Ingrese el nombre del trabajador");
-        trabajador.setNombre(scanner.next());
-        
-        System.out.println("Ingrese la cantidad de horas");
-        trabajador.setHoras(scanner.nextDouble());
-        
-        System.out.println("Ingrese la tarifa a pagar");
-        trabajador.setTarifa(scanner.nextDouble());                
+                
+        System.out.println("23) Notas de N alumnos");
+        decision = scanner.nextInt();
     }
     
-    public void mostrarInformacion() {
-        recibirDatos();
-        System.out.println("Se le debe pagar: " + trabajador.pagoTrabajador());
+    public void opcion(int decision) {
+        
     }
+    
 }

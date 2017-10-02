@@ -8,6 +8,7 @@ package menu;
 import java.util.Scanner;
 import manejador.ManejadorEstudiante;
 import manejador.ManejadorProduccion;
+import manejador.ManejadorProductos;
 import modelo.Estudiante;
 import modelo.Trabajador;
 
@@ -20,10 +21,12 @@ public class Menu {
     private int decision;
     private ManejadorEstudiante manejadorEstudiante;
     private ManejadorProduccion manejadorProduccion;
+    private ManejadorProductos manejadorProductos;
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
         manejadorProduccion = new ManejadorProduccion();
+        manejadorProductos = new ManejadorProductos();
     }
         
     public void mostrarInformacion() {
@@ -35,6 +38,7 @@ public class Menu {
         System.out.println("23) Notas de N alumnos");
         System.out.println("24) Polinomio");
         System.out.println("25) Costos de produccion");
+        System.out.println("26) Gancia sobre productos");
         decision = scanner.nextInt();
         
         opcion(decision);
@@ -50,6 +54,12 @@ public class Menu {
         if(decision == 25) {
             manejadorProduccion.agregarProductos();
             manejadorProduccion.listaProductos();
+        }
+        
+        if(decision == 26) {
+            manejadorProductos.agregarProductos();
+            manejadorProductos.inversion();
+            manejadorProductos.reporte();
         }
     }
     

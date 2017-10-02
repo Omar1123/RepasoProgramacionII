@@ -7,6 +7,7 @@ package menu;
 
 import java.util.Scanner;
 import manejador.ManejadorEstudiante;
+import manejador.ManejadorProduccion;
 import modelo.Estudiante;
 import modelo.Trabajador;
 
@@ -18,9 +19,11 @@ public class Menu {
         
     private int decision;
     private ManejadorEstudiante manejadorEstudiante;
+    private ManejadorProduccion manejadorProduccion;
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
+        manejadorProduccion = new ManejadorProduccion();
     }
         
     public void mostrarInformacion() {
@@ -45,7 +48,8 @@ public class Menu {
         }
         
         if(decision == 25) {
-            
+            manejadorProduccion.agregarProductos();
+            manejadorProduccion.listaProductos();
         }
     }
     

@@ -58,5 +58,19 @@ public class ManejadorEstudiante {
             System.out.println("Nota: " + estudiante.getMateria());             
         }
         
+        System.out.println("El promedio es: " + promedioAlumnos());
+    }
+    
+    public double promedioAlumnos() {
+        
+        double promedio;
+        promedio = 0;
+        
+        for(Estudiante estudiante: listaEstudiantes) {
+            promedio += estudiante.getNota();
+        }
+        
+        promedio = promedio / listaEstudiantes.size();
+        return promedio;
     }
 }

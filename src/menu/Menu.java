@@ -6,6 +6,7 @@
 package menu;
 
 import java.util.Scanner;
+import manejador.ManejadorEstudiante;
 import modelo.Estudiante;
 import modelo.Trabajador;
 
@@ -16,6 +17,7 @@ import modelo.Trabajador;
 public class Menu {
         
     private int decision;
+    private ManejadorEstudiante manejadorEstudiante;
     
     public Menu() {        
     
@@ -30,7 +32,10 @@ public class Menu {
     }
     
     public void opcion(int decision) {
-        
+        if(decision == 23) {
+            manejadorEstudiante.agregarEstudiantes();
+            manejadorEstudiante.mostarListaOrdenada();            
+        }
     }
     
 }

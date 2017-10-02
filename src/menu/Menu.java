@@ -20,7 +20,7 @@ public class Menu {
     private ManejadorEstudiante manejadorEstudiante;
     
     public Menu() {        
-    
+        manejadorEstudiante = new ManejadorEstudiante();
     }
         
     public void mostrarInformacion() {
@@ -29,10 +29,12 @@ public class Menu {
                 
         System.out.println("23) Notas de N alumnos");
         decision = scanner.nextInt();
+        
+        opcion(decision);
     }
     
     public void opcion(int decision) {
-        if(decision == 23) {
+        if(decision == 23) {            
             manejadorEstudiante.agregarEstudiantes();
             manejadorEstudiante.mostarListaOrdenada();            
         }

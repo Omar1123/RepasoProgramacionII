@@ -35,18 +35,20 @@ public class ManejadorEstudiante {
     
     public void agregarEstudiantes() {
         
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Ingrese el nombre del estudiante");
-        estudiante.setNombre(scanner.next());
-        
-        System.out.println("Ingrese el nombre de la materia");
-        estudiante.setMateria(scanner.next());
-        
-        System.out.println("Ingrese la nota");
-        estudiante.setNota(scanner.nextDouble());      
-        
-        listaEstudiantes.add(estudiante);
+        for(int i=0; i < 3; i++) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Ingrese el nombre del estudiante " + i);
+            estudiante.setNombre(scanner.next());
+
+            System.out.println("Ingrese el nombre de la materia " + i);
+            estudiante.setMateria(scanner.next());
+
+            System.out.println("Ingrese la nota " + i);
+            estudiante.setNota(scanner.nextDouble());      
+
+            listaEstudiantes.add(estudiante);    
+        }                
     }
     
     public void mostarListaOrdenada() {

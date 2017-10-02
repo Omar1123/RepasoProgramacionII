@@ -26,17 +26,26 @@ public class Menu {
     public void mostrarInformacion() {
         
         Scanner scanner = new Scanner(System.in);
-                
+        
+        System.out.println("Hoja 5");
+        
         System.out.println("23) Notas de N alumnos");
+        System.out.println("24) Polinomio");
+        System.out.println("25) Costos de produccion");
         decision = scanner.nextInt();
         
         opcion(decision);
     }
     
     public void opcion(int decision) {
+        
         if(decision == 23) {            
             manejadorEstudiante.agregarEstudiantes();
             manejadorEstudiante.mostarListaOrdenada();            
+        }
+        
+        if(decision == 25) {
+            
         }
     }
     

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import manejador.ManejadorEstudiante;
 import manejador.ManejadorProduccion;
 import manejador.ManejadorProductos;
+import modelo.Alternante;
 import modelo.Crapulo;
 import modelo.Estudiante;
 import modelo.Trabajador;
@@ -25,12 +26,14 @@ public class Menu {
     private ManejadorProductos manejadorProductos;
     
     private Crapulo crapulo;
+    private Alternante alternante;
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
         manejadorProduccion = new ManejadorProduccion();
         manejadorProductos = new ManejadorProductos();
         crapulo = new Crapulo();
+        alternante = new Alternante();
     }
         
     public void mostrarInformacion() {
@@ -46,6 +49,7 @@ public class Menu {
         
         System.out.println("Hoja 6");
         System.out.println("27) 1: Crapulo de un numero");
+        System.out.println("28) 1: Alternante");
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -72,6 +76,10 @@ public class Menu {
         if(decision == 27) {
             calcularCrapulo();     
         }
+        
+        if(decision == 28) {
+            esAlternante();
+        }
     }
     
     public void calcularCrapulo() {
@@ -81,9 +89,21 @@ public class Menu {
         
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el numero a calcular");
-        numeroTemporal = scanner.nextInt();
+        crapulo.setNumero(scanner.nextInt());       
         
         System.out.println("El crapulo es: " + crapulo.calcularCrapulo(numeroTemporal));
+    }
+ 
+    public void esAlternante() {
+        
+        int valorTemporal;        
+        valorTemporal = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el numero a validar");
+        alternante.setAlternante(scanner.nextInt());
+        
+        System.out.println("El crapulo es: " + alternante.esAlternante());
     }
     
 }

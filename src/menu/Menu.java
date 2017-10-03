@@ -9,6 +9,7 @@ import java.util.Scanner;
 import manejador.ManejadorEstudiante;
 import manejador.ManejadorProduccion;
 import manejador.ManejadorProductos;
+import modelo.Crapulo;
 import modelo.Estudiante;
 import modelo.Trabajador;
 
@@ -23,10 +24,13 @@ public class Menu {
     private ManejadorProduccion manejadorProduccion;
     private ManejadorProductos manejadorProductos;
     
+    private Crapulo crapulo;
+    
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
         manejadorProduccion = new ManejadorProduccion();
         manejadorProductos = new ManejadorProductos();
+        crapulo = new Crapulo();
     }
         
     public void mostrarInformacion() {
@@ -39,8 +43,11 @@ public class Menu {
         System.out.println("24) Polinomio");
         System.out.println("25) Costos de produccion");
         System.out.println("26) Gancia sobre productos");
-        decision = scanner.nextInt();
         
+        System.out.println("Hoja 6");
+        System.out.println("27) 1: Crapulo de un numero");
+        
+        decision = scanner.nextInt();        
         opcion(decision);
     }
     
@@ -61,6 +68,22 @@ public class Menu {
             manejadorProductos.inversion();
             manejadorProductos.reporte();
         }
+        
+        if(decision == 27) {
+            calcularCrapulo();     
+        }
+    }
+    
+    public void calcularCrapulo() {
+        
+        int numeroTemporal;
+        numeroTemporal = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el numero a calcular");
+        numeroTemporal = scanner.nextInt();
+        
+        System.out.println("El crapulo es: " + crapulo.calcularCrapulo(numeroTemporal));
     }
     
 }

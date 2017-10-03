@@ -18,6 +18,7 @@ import modelo.MultiplicacionRusa;
 import modelo.Newton;
 import modelo.NumeroAmigable;
 import modelo.NumerosAlternos;
+import modelo.NumerosAutTrif;
 import modelo.Trabajador;
 
 /**
@@ -39,6 +40,8 @@ public class Menu {
     private MultiplicacionRusa multiplicacionRusa;
     private NumeroAmigable numeroAmigable;
     private NumerosAlternos numerosAlternos;
+    private NumerosAutTrif numerosAutTrif;
+    
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
@@ -52,6 +55,7 @@ public class Menu {
         multiplicacionRusa = new MultiplicacionRusa();
         numeroAmigable = new NumeroAmigable();
         numerosAlternos = new NumerosAlternos();
+        numerosAutTrif = new NumerosAutTrif();
     }
         
     public void mostrarInformacion() {
@@ -74,6 +78,7 @@ public class Menu {
         System.out.println("32) 6: Multiplicacion Rusa");
         System.out.println("33) 7: Comprobar par de numeros amigables");
         System.out.println("34) 8: Numeros alternos");
+        System.out.println("35) 9: Numeros automorficos y trimorficos");        
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -129,6 +134,9 @@ public class Menu {
             numerosAlternos();
         }
         
+        if(decision == 35) {
+            resultadoNumeros();
+        }               
     }
     
     public void calcularCrapulo() {
@@ -212,4 +220,15 @@ public class Menu {
         
         System.out.println("Es divisible dentro de 11: " + numerosAlternos.esDivisible());
     }
+    
+    public void resultadoNumeros() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor del numero a calcular");        
+        numerosAutTrif.setNumeroAutomorfico(scanner.nextInt());
+        
+        System.out.println("Es valor es automorfico: " + numerosAutTrif.numeroAutomórfico());
+    }
+    
+   
 }

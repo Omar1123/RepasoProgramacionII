@@ -12,6 +12,8 @@ import manejador.ManejadorProductos;
 import modelo.Alternante;
 import modelo.Crapulo;
 import modelo.Estudiante;
+import modelo.Exponente;
+import modelo.Newton;
 import modelo.Trabajador;
 
 /**
@@ -27,6 +29,9 @@ public class Menu {
     
     private Crapulo crapulo;
     private Alternante alternante;
+    private Newton newton;
+    private Exponente exponente;
+    
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
@@ -34,6 +39,8 @@ public class Menu {
         manejadorProductos = new ManejadorProductos();
         crapulo = new Crapulo();
         alternante = new Alternante();
+        newton = new Newton();
+        exponente = new Exponente();
     }
         
     public void mostrarInformacion() {
@@ -49,7 +56,9 @@ public class Menu {
         
         System.out.println("Hoja 6");
         System.out.println("27) 1: Crapulo de un numero");
-        System.out.println("28) 1: Alternante");
+        System.out.println("28) 2: Alternante");
+        System.out.println("29) 3: Algoritmo de newton");
+        System.out.println("30) 4: Exponente");
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -80,6 +89,16 @@ public class Menu {
         if(decision == 28) {
             esAlternante();
         }
+        
+        if(decision == 29) {
+            algoritmoDeNewton();
+        }
+        
+        if(decision == 30) {
+            exponenteDelNumero();
+        }
+        
+        
     }
     
     public void calcularCrapulo() {
@@ -104,6 +123,24 @@ public class Menu {
         alternante.setAlternante(scanner.nextInt());
         
         System.out.println("El crapulo es: " + alternante.esAlternante());
+    }
+    
+    public void algoritmoDeNewton() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor inicial");
+        newton.setValorInicial(scanner.nextDouble());
+        
+        System.out.println("El valor es: " + newton.calcularRaiz());        
+    }
+    
+    public void exponenteDelNumero() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor x");
+        exponente.setNumeroExponente(scanner.nextInt());
+        
+        System.out.println(exponente.myexp(1., 100));
     }
     
 }

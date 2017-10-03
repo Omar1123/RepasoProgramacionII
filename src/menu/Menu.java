@@ -17,6 +17,7 @@ import modelo.Exponente;
 import modelo.MultiplicacionRusa;
 import modelo.Newton;
 import modelo.NumeroAmigable;
+import modelo.NumerosAlternos;
 import modelo.Trabajador;
 
 /**
@@ -37,7 +38,7 @@ public class Menu {
     private Binario binario;
     private MultiplicacionRusa multiplicacionRusa;
     private NumeroAmigable numeroAmigable;
-    
+    private NumerosAlternos numerosAlternos;
     
     public Menu() {        
         manejadorEstudiante = new ManejadorEstudiante();
@@ -50,6 +51,7 @@ public class Menu {
         binario = new Binario();
         multiplicacionRusa = new MultiplicacionRusa();
         numeroAmigable = new NumeroAmigable();
+        numerosAlternos = new NumerosAlternos();
     }
         
     public void mostrarInformacion() {
@@ -71,6 +73,7 @@ public class Menu {
         System.out.println("31) 5: Binario a decimal");
         System.out.println("32) 6: Multiplicacion Rusa");
         System.out.println("33) 7: Comprobar par de numeros amigables");
+        System.out.println("34) 8: Numeros alternos");
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -120,7 +123,11 @@ public class Menu {
         
         if(decision == 33) {
             numeroAmigable();
-        }        
+        }
+        
+        if(decision == 34) {
+            numerosAlternos();
+        }
         
     }
     
@@ -195,5 +202,14 @@ public class Menu {
         numeroAmigable.setSegundoNumero(scanner.nextInt());
         
         System.out.println("El resultado es: " + numeroAmigable.comprobarPar());
+    }
+    
+    public void numerosAlternos() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor del numero alterno");        
+        numerosAlternos.setNumeroAlterno(scanner.nextInt());
+        
+        System.out.println("Es divisible dentro de 11: " + numerosAlternos.esDivisible());
     }
 }

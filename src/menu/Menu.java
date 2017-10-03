@@ -10,6 +10,7 @@ import manejador.ManejadorEstudiante;
 import manejador.ManejadorProduccion;
 import manejador.ManejadorProductos;
 import modelo.Alternante;
+import modelo.Binario;
 import modelo.Crapulo;
 import modelo.Estudiante;
 import modelo.Exponente;
@@ -31,6 +32,7 @@ public class Menu {
     private Alternante alternante;
     private Newton newton;
     private Exponente exponente;
+    private Binario binario;
     
     
     public Menu() {        
@@ -41,6 +43,7 @@ public class Menu {
         alternante = new Alternante();
         newton = new Newton();
         exponente = new Exponente();
+        binario = new Binario();
     }
         
     public void mostrarInformacion() {
@@ -59,6 +62,7 @@ public class Menu {
         System.out.println("28) 2: Alternante");
         System.out.println("29) 3: Algoritmo de newton");
         System.out.println("30) 4: Exponente");
+        System.out.println("31) 5: Binario a decimal");
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -98,6 +102,9 @@ public class Menu {
             exponenteDelNumero();
         }
         
+        if(decision == 31) {
+            binarioADecimal();
+        }
         
     }
     
@@ -141,6 +148,15 @@ public class Menu {
         exponente.setNumeroExponente(scanner.nextInt());
         
         System.out.println(exponente.myexp(1., 100));
+    }
+    
+    public void binarioADecimal() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor en binario");
+        binario.setBinario(scanner.next());
+        
+        System.out.println("El resultado es: " + binario.calcularDecimal());
     }
     
 }

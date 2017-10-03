@@ -14,7 +14,9 @@ import modelo.Binario;
 import modelo.Crapulo;
 import modelo.Estudiante;
 import modelo.Exponente;
+import modelo.MultiplicacionRusa;
 import modelo.Newton;
+import modelo.NumeroAmigable;
 import modelo.Trabajador;
 
 /**
@@ -33,6 +35,8 @@ public class Menu {
     private Newton newton;
     private Exponente exponente;
     private Binario binario;
+    private MultiplicacionRusa multiplicacionRusa;
+    private NumeroAmigable numeroAmigable;
     
     
     public Menu() {        
@@ -44,6 +48,8 @@ public class Menu {
         newton = new Newton();
         exponente = new Exponente();
         binario = new Binario();
+        multiplicacionRusa = new MultiplicacionRusa();
+        numeroAmigable = new NumeroAmigable();
     }
         
     public void mostrarInformacion() {
@@ -63,6 +69,8 @@ public class Menu {
         System.out.println("29) 3: Algoritmo de newton");
         System.out.println("30) 4: Exponente");
         System.out.println("31) 5: Binario a decimal");
+        System.out.println("32) 6: Multiplicacion Rusa");
+        System.out.println("33) 7: Comprobar par de numeros amigables");
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -105,6 +113,14 @@ public class Menu {
         if(decision == 31) {
             binarioADecimal();
         }
+        
+        if(decision == 32) {
+            multiplicacionRusa();
+        }        
+        
+        if(decision == 33) {
+            numeroAmigable();
+        }        
         
     }
     
@@ -159,4 +175,25 @@ public class Menu {
         System.out.println("El resultado es: " + binario.calcularDecimal());
     }
     
+    public void multiplicacionRusa() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el valor del multiplicador");
+        multiplicacionRusa.setMultiplicador(scanner.nextInt());
+        System.out.println("Ingrese el valor del multiplicando");
+        multiplicacionRusa.setMultiplicando(scanner.nextInt());
+        
+        System.out.println("El valor es: " + multiplicacionRusa.Multiplicacion_Rusa());
+    }
+    
+    public void numeroAmigable() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el primer valor");
+        numeroAmigable.setPrimerNumero(scanner.nextInt());        
+        System.out.println("Ingrese el segundo valor");
+        numeroAmigable.setSegundoNumero(scanner.nextInt());
+        
+        System.out.println("El resultado es: " + numeroAmigable.comprobarPar());
+    }
 }

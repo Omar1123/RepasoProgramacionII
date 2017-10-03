@@ -11,6 +11,7 @@ import manejador.ManejadorProduccion;
 import manejador.ManejadorProductos;
 import modelo.Alternante;
 import modelo.Binario;
+import modelo.Conjuntos;
 import modelo.Crapulo;
 import modelo.Estudiante;
 import modelo.Exponente;
@@ -41,6 +42,7 @@ public class Menu {
     private NumeroAmigable numeroAmigable;
     private NumerosAlternos numerosAlternos;
     private NumerosAutTrif numerosAutTrif;
+    private Conjuntos conjuntos;
     
     
     public Menu() {        
@@ -56,6 +58,7 @@ public class Menu {
         numeroAmigable = new NumeroAmigable();
         numerosAlternos = new NumerosAlternos();
         numerosAutTrif = new NumerosAutTrif();
+        conjuntos = new Conjuntos();
     }
         
     public void mostrarInformacion() {
@@ -230,5 +233,16 @@ public class Menu {
         System.out.println("Es valor es automorfico: " + numerosAutTrif.numeroAutomórfico());
     }
     
+    public void combinarResultadosNumeros() {
+        
+        System.out.println("Convinando resultados");        
+        conjuntos.convinarResultados();
+        System.out.println("A - B");        
+        conjuntos.aMenosB();
+        System.out.println("B - A");        
+        conjuntos.bMenosA();
+        System.out.println("Interferencia");        
+        conjuntos.inter();
+    }
    
 }

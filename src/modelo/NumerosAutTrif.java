@@ -47,7 +47,7 @@ public class NumerosAutTrif {
         
         int cuadrado = numeroAutomorfico * numeroAutomorfico;            
         
-        if(numeroAutomorfico == (square%100) || numeroAutomorfico  == (square%10) ) 
+        if(numeroAutomorfico == (cuadrado%100) || numeroAutomorfico  == (cuadrado%10) ) 
             automorfico = true;
         else {
             automorfico = false;

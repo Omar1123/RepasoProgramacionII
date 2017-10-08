@@ -82,6 +82,7 @@ public class Menu {
         System.out.println("33) 7: Comprobar par de numeros amigables");
         System.out.println("34) 8: Numeros alternos");
         System.out.println("35) 9: Numeros automorficos y trimorficos");        
+        System.out.println("37) 11: Conunto de numeros");                
         
         decision = scanner.nextInt();        
         opcion(decision);
@@ -139,7 +140,11 @@ public class Menu {
         
         if(decision == 35) {
             resultadoNumeros();
-        }               
+        }      
+        
+        if(decision == 37) {
+            combinarResultadosNumeros();
+        }
     }
     
     public void calcularCrapulo() {
